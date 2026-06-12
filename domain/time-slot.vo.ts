@@ -32,4 +32,8 @@ export class TimeSlot {
     this.start = props.start;
     this.end = props.end;
   }
+
+  overlaps(other: TimeSlot): boolean {
+    return this.start < other.end && other.start < this.end;
+  }
 }
